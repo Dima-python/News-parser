@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Главная страница</title>
+</head>
+<body>
+      {% block header_ %}{% endblock %}
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        </div>
+        {% block category %}{% endblock %}
+        {% block topic %}{% endblock %}
+        <a href="{% url 'text' %}" class="icon-link">
+        </a>
+        <a href="{% url 'home' %}" class="icon-link">
+          {% block back %}{% endblock %}
+        </a>
+        <h2>{% block text %}{% endblock %}</h2>
+      </div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'news/base.html' %}
+
+{% block header_ %}
+	<h3 class="fs-2">Новостная лента</h3>
+{% endblock %}
+
+{% block topic %}
+	<form action="{% url 'text' %}" method="post">
+	    {% csrf_token %}
+	    {{ res.as_p }}
+	    <button type="submit">Отправить</button>
+	</form>
+	{% for i in themes %}
+		<form class="form-test" method="post">
+			<li><a href = 'text/'>{{ i }}</a></li><br>
+		</form>
+	{% endfor %}
+{% endblock %}
+
+
+{% block back %}
+	Вернуться на главную
+{% endblock %}
+
